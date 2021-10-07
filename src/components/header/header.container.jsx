@@ -1,12 +1,14 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 import Header from './header.component'
-import { GET_CART_HIDDEN } from '../../graphql/queries'
+import { GET_HEADER_DATA } from '../../graphql/queries'
 
 const HeaderContainer = () => (
-  <Query query={GET_CART_HIDDEN}>
+  <Query query={GET_HEADER_DATA}>
     {
-      ({ data: {cartHidden} }) => <Header hidden={cartHidden} />
+      ({ data: { cartHidden, currentUser } }) => (
+        <Header hidden={cartHidden} currentUser={currentUser} />
+      )
     }
   </Query>
 )

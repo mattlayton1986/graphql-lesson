@@ -8,11 +8,11 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloClient } from 'apollo-boost';
 import { typeDefs, resolvers } from './graphql/resolvers';
-
+import { default as data } from './graphql/initial-data'
 import { store, persistor } from './redux/store';
 
 import './index.css';
-import App from './App';
+import {default as App} from './App/App.container';
 
 // Note on URIs below: localhost:5000 goes to the GraphQL server implementation
 // I build on my own in my main project for this course; see 
@@ -34,13 +34,7 @@ const client = new ApolloClient({
   resolvers
 })
 
-client.writeData({
-  data: {
-    cartHidden: true,
-    cartItems: [],
-    itemCount: 0,
-  }
-})
+client.writeData({ data })
 
 ReactDOM.render(
   <ApolloProvider client={client}>

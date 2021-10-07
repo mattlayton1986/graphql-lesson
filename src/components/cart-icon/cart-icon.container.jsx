@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'react-apollo'
-import compose  from 'lodash/flowRight'
+import compose from 'lodash/flowRight'
 import CartIcon from './cart-icon.component'
 import { TOGGLE_CART_HIDDEN } from '../../graphql/mutations'
 import { GET_ITEM_COUNT } from '../../graphql/queries'

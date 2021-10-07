@@ -30,6 +30,13 @@ export const GET_COLLECTION_BY_TITLE = gql`
   }
 `
 
+export const GET_HEADER_DATA = gql`
+  {
+    cartHidden @client
+    currentUser @client
+  }
+`
+
 export const GET_CART_HIDDEN = gql`
   { 
     cartHidden @client
@@ -41,9 +48,27 @@ export const GET_CART_ITEMS = gql`
     cartItems @client
   }
 `
+export const GET_CART_TOTAL = gql`
+  {
+    cartTotal @client
+  }
+`
+
+export const GET_CART_ITEMS_AND_TOTAL = gql`
+  {
+    cartItems @client
+    cartTotal @client
+  }
+`;
 
 export const GET_ITEM_COUNT = gql`
   {
     itemCount @client
+  }
+`
+
+export const GET_CURRENT_USER = gql`
+  {
+    currentUser @client
   }
 `
